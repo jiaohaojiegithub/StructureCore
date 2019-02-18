@@ -1,0 +1,84 @@
+﻿@model CoreMVCTestMVC.Areas.Admin.Models.AdminLogin
+
+@{
+    ViewData["Title"] = "后台登陆";
+    Layout = "~/Views/Shared/_LayoutOriginal.cshtml";
+}
+<div class="container text-center">
+    <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
+    @using (Html.BeginForm("Test", "BackgroundManagement", new { Area = "Admin" }, FormMethod.Post, true, new { @class = "form-signin" }))
+    {
+        @Html.LabelFor(model => model.UserName, new { @class = "sr-only" })
+
+        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { type = "text", @class = "form-control", placeholder = "用户名", @autocomplete = "off" } })
+        @Html.ValidationMessageFor(model => model.UserName, null, new { @class = "text-danger text-right float-left" })
+
+        @Html.LabelFor(model => model.AdminPassWord, new { @class = "sr-only" })
+
+        @Html.PasswordFor(model => model.AdminPassWord, new { @class = "form-control", @autocomplete = "off", title = "密码不能少于6位" })
+        @Html.ValidationMessageFor(model => model.AdminPassWord, null, new { @class = "text-danger text-right float-left" })
+
+        <button class="btn btn-lg btn-primary btn-block " type="submit">登录</button>
+
+        @Html.ValidationSummary(true)
+    }
+
+    @section Scripts {
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                //$("input").removeClass();
+                //$("#AdminPassWord").addClass("form-control");
+                ////$("#AdminPassWord").attr("placeholder", "密码");
+                $("#AdminPassWord").attr({ "placeholder": "密码", "data-toggle": "tooltip", "title": "密码不能少于6位", "data-placement": "right" });
+                //$("#UserName").addClass("form-control");
+                //$("#UserName").addClass("")
+                $(function () {
+                    $('[data-toggle="tooltip"]').tooltip();
+                });
+                $("#UserName").focus();
+            });
+            function isUsername(str) {
+                var regUsername = /^[A-Za-z0-9\u4e00-\u9fa5]+$/; /*定义验证表达式*/
+                return regUsername.test(str); /*定义验证表达式*/
+            };
+            /*校验密码*/
+            function isPassword(str) {
+                var regPassword = /^[\w]{6,18}$/;
+                return regPassword.test(str);
+            };
+            $('#UserName,#AdminPassWord').focusout(function () {
+                var username = $('#UserName').val();
+                var password = $('#AdminPassWord').val();
+                var state = false;
+                if (username != "" && password != "") {
+                    if (!isUsername(username)) {
+                        $('#UserName').addClass("border-warning");
+                        state = false;
+                    }
+                    if (!isPassword(password)) {
+                        $('#AdminPassWord').addClass("border-warning");
+                        state = false;
+                    }
+
+                    if (isUsername(username) && isPassword(password)) {
+                        state = true;
+                        $('#UserName').removeClass("border-warning");
+                        $('#AdminPassWord').removeClass("border-warning");
+                    }
+                }
+                else {
+                    if (username == "") {
+                        $('#UserName').addClass("border-warning");
+                    }
+                    if (password = "") {
+                        $('#AdminPassWord').addClass("border-warning");
+                        state = false;
+                    }
+                };
+
+            });
+        </script>
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</div>

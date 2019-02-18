@@ -1,0 +1,216 @@
+﻿@model IEnumerable<StructureCore.Models.HmBaseFabric>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BrandId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FabricCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FabricName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValidWidth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValidWidthUnit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UseWidth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UseWidthUnit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Component)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GramWeight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SamplePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodsPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shrinkage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pnremark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Picture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SureDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ColoringDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AfterfinishDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodsDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrintingDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifyDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifyUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FabricClass)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrandId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FabricCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FabricName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValidWidth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValidWidthUnit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UseWidth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UseWidthUnit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Component)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GramWeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SamplePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoodsPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Shrinkage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pnremark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Picture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SureDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ColoringDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AfterfinishDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoodsDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrintingDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifyDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifyUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FabricClass)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

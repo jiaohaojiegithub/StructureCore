@@ -1,0 +1,59 @@
+﻿@model FrameworkTest.Models.User_Login
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User_Login</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserLogin_CreatDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserLogin_CreatDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserLogin_Guid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserLogin_Guid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserLogin_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserLogin_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserLogin_PassWord)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserLogin_PassWord)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserLogin_State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserLogin_State)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserLogin_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

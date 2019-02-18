@@ -1,0 +1,5 @@
+{
+  "ConnectionString": {
+    "TestDb": "Server=.;Database=TestALL;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}

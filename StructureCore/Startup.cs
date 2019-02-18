@@ -7,8 +7,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StructureCore.JSONModel;
+using StructureCore.Models;
 
 namespace StructureCore
 {
@@ -31,8 +34,11 @@ namespace StructureCore
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddDbContext<erp_baseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ERPOTT")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.Configure<ConnectionStrings>(Configuration.GetSection("ConnectionStrings"));//appsettings注入
+            
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +64,10 @@ namespace StructureCore
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(
+                       name: "areas",
+                       template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                     );
             });
         }
     }
